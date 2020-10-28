@@ -13,7 +13,7 @@ namespace Pipeline.Api.Controllers
     {
         private readonly ILogger<HealthController> _logger;
 
-        public WeatherForecastController(ILogger<HealthController> logger)
+        public HealthController(ILogger<HealthController> logger)
         {
             _logger = logger;
         }
