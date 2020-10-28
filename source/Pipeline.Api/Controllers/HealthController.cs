@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Pipeline.Api.Controllers
 {
+    [Produces("application/json")]
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/health")]
     public class HealthController : ControllerBase
     {
         private readonly ILogger<HealthController> _logger;
@@ -18,10 +15,10 @@ namespace Pipeline.Api.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet("ping")]
         public string Ping()
         {
-            return "Pong";
+            return "pong";
         }
     }
 }
